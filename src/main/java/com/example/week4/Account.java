@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Account {
     private double balance;
-    private ArrayList<Transaction> transitionList;   
+    private ArrayList<Transaction1> transitionList;   
 
     /**
      * Constructor 1.
@@ -12,7 +12,7 @@ public class Account {
 
     Account() {
         this.balance = 0;
-        this.transitionList = new ArrayList<Transaction>();
+        this.transitionList = new ArrayList<Transaction1>();
     }
 
     /**
@@ -22,7 +22,7 @@ public class Account {
 
     Account(double balance) {
         this.balance = balance;
-        this.transitionList = new ArrayList<Transaction>();
+        this.transitionList = new ArrayList<Transaction1>();
     }
 
     private void deposit(double amount) {
@@ -31,7 +31,7 @@ public class Account {
             return;
         }
         balance += amount;
-        transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+        transitionList.add(new Transaction1(Transaction1.DEPOSIT, amount, balance));
     }
 
     private void withdraw(double amount) {
@@ -41,7 +41,7 @@ public class Account {
             System.out.println("So tien ban rut vuot qua so du!");
         } else {
             balance -= amount;
-            transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+            transitionList.add(new Transaction1(Transaction1.WITHDRAW, amount, balance));
         }
     }
 
@@ -52,9 +52,9 @@ public class Account {
      */
 
     public void addTransaction(double amount, String operation) {
-        if (operation.equals(Transaction.DEPOSIT)) {
+        if (operation.equals(Transaction1.DEPOSIT)) {
             deposit(amount);
-        } else if (operation.equals(Transaction.WITHDRAW)) {
+        } else if (operation.equals(Transaction1.WITHDRAW)) {
             withdraw(amount);
         } else {
             System.out.println("Yeu cau khong hop le!");
@@ -67,8 +67,8 @@ public class Account {
 
     public void printTransaction() {
         int i = 1;
-        for (Transaction transaction : transitionList) {
-            if (transaction.getOperation().equals(Transaction.DEPOSIT)) {
+        for (Transaction1 transaction : transitionList) {
+            if (transaction.getOperation().equals(Transaction1.DEPOSIT)) {
                 System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", 
                 i, transaction.getAmount(), transaction.getBalance());
             } else {

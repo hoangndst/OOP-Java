@@ -1,6 +1,6 @@
 package com.example.week4;
 
-public class Transaction {
+public class Transaction1 {
     private String operation;
     private double amount;
     private double balance;
@@ -14,7 +14,7 @@ public class Transaction {
      * @param balance The balance after the operation.
      */
 
-    public Transaction(String operation, double amount, double balance) {
+    public Transaction1(String operation, double amount, double balance) {
         this.operation = operation;
         this.amount = amount;
         this.balance = balance;

@@ -1,6 +1,7 @@
 package com.example.week7;
 
 abstract class Vehicle {
+    
     protected String brand;
     protected String model;
     protected String registrationNumber;
